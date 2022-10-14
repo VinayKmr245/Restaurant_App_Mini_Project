@@ -1,0 +1,55 @@
+{%extends 'slaves/slavesbass.html'%}
+
+{%block contents%}
+ <div class="container">
+     <h2>Updating Booking Reservations</h2>
+     <form action="{%url 'UpdateReservationAction'%}" method="post">
+         {%csrf_token%}
+         <table class="table sm">
+              <td><input type="hidden" name="id" value="{{data.id}}" required></td>
+             <tr>
+                 <td>Customer Name</td>
+                 <td><input type="text" name="custname" value="{{data.custname}}" required></td>
+             </tr>
+             <tr>
+                 <td>Mobile Number</td>
+                 <td><input type="text" name="mobile" value="{{data.mobile}}" required></td>
+             </tr>
+             <tr>
+                 <td>Customer Email</td>
+                 <td><input type="text" name="email" value="{{data.email}}" required></td>
+             </tr>
+             <tr>
+                 <td>No of Chairs</td>
+                 <td><input type="number" min="1" name="noofchairs" value="{{data.noofchairs}}" required></td>
+             </tr>
+             <tr>
+                 <td>Coming From</td>
+                 <td><input type="text"  name="comingfrom"  value="{{data.comingfrom}}" required></td>
+             </tr>
+             <tr>
+                 <td>Booking Branch</td>
+                 <td><input type="text" name="brnach" value="{{request.session.branch}}" readonly></td>
+             </tr>
+             <tr>
+                 <td>Reservation Date</td>
+                 <td><input type="date" name="reservDate" value="{{data.reservDate}}" required></td>
+             </tr>
+             <tr>
+                 <td></td>
+                 <td>
+                     <button class="button button-hero button-shadow" type="submit">Reserve</button>
+                 </td>
+             </tr>
+
+
+         </table>
+     </form>
+     <h4><font color="RED">
+     Response Code <span>{{code}}</span>
+     {{msg}}
+         </font>
+</h4>
+ </div>
+
+{%endblock%}

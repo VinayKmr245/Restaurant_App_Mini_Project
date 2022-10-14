@@ -1,0 +1,9 @@
+{%extends 'slaves/slavesbass.html'%}
+
+{%block contents%}
+ <div class="container">
+
+     Your Token is <strong><textarea rows="2" cols="120" readonly>{{request.session.token}}</textarea></strong>
+ </div>
+
+{%endblock%}

@@ -1,0 +1,12 @@
+login details :
+UserName :admin 
+Password :admin
+
+To Run the Project : python manage.py runserver
+To Install DjangoRestFrameWork - jwt: pip install djangorestframework-jwt
+To Change Django to older Versions so as to make features Support : pip install django==3.*
+To Install dependencies so as to run the Django Project :  pip3 install -r requirements.txt
+To Install DjangoRestFrameWork: pip install djangorestframework
+To Install Modules one by one :  pip install django-cms   
+To Install requirements.txt folder : pip install pipreqs
+To install Django : pip install django

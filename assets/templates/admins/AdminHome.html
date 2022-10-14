@@ -1,0 +1,26 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+{%block contents%}
+<section class="about section-margin pb-xl-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 mb-5 mb-md-0 pb-5 pb-md-0">
+          <div class="img-styleBox">
+            <div class="styleBox-border">
+              <img class="styleBox-img1 img-fluid" src="{%static 'img/home/about-img1.png'%}" alt="">
+            </div>
+            <img class="styleBox-img2 img-fluid" src="{%static 'img/home/about-img2.png'%}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-5 pl-xl-0 offset-xl-1 col-xl-5">
+          <div class="section-intro mb-lg-4">
+            <h4 class="intro-title">About Us</h4>
+            <h2>RESTFul API architecture</h2>
+          </div>
+          <p>With an integrated system, all revenue from restaurant sales can be monitored in realtime. The system design is made by implementing the RESTFul API architecture with security access tokens. The Master Application as a provider of Embedded Data Service Web resources on 3 Restaurant Information Systems</p>
+          <!--<a class="button button-shadow mt-2 mt-lg-4" href="#">Learn More</a>-->
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

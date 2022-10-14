@@ -1,0 +1,45 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+{%block contents%}
+<section class="about section-margin pb-xl-70">
+    <div class="container">
+        <h2>View All Branch Users and Send Login Details</h2>
+      <p>
+ <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Login ID</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Locality</th>
+                        <th scope="col">Branch</th>
+                        <th scope="col">Send mail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.loginid}}</td>
+                        <td>{{i.mobile}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.locality}}</td>
+                        <td><strong>{{i.branch}}</strong></td>
+                        <td><a class="btn-link" href="{%url 'AdminSendingMailsToBrachUsers'%}?uid={{ i.id }}" style="color:DARKBLUE">Send</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+
+                        </p>
+    </div>
+  </section>
+{%endblock%}

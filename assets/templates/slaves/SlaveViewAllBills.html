@@ -1,0 +1,43 @@
+{%extends 'slaves/slavesbass.html'%}
+
+{%block contents%}
+ <div class="container">
+<span>View ALl Bill Details of the Branch</span>
+    {% if data %}
+    <br>
+<br>
+    <table align="center" border="2">
+    <tr>
+        <th>S.NO</th>
+        <th>Customer Name</th>
+        <th>Mobile</th>
+        <th>No Of People</th>
+        <th>Item Codes</th>
+        <th>Branch</th>
+        <th>Total Amount</th>
+        <th>Branch user</th>
+        <th>Bill Date</th>
+
+
+    </tr>
+{% for x in data %}
+
+<tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.customername }}</td>
+    <td>{{ x.mobile }}</td>
+    <td>{{ x.noofchairs }}</td>
+    <td>{{ x.itemcodes }}</td>
+    <td>{{ x.branch }}</td>
+    <td>&#x20B9;{{ x.totalamount}}</td>
+    <td>{{x.branchUser}}</td>
+    <td>{{x.cdate}}</td>
+
+    </tr>
+{% endfor %}
+    </table>
+{% endif %}
+
+ </div>
+
+{%endblock%}

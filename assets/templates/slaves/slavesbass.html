@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restaurant Billing System - Home</title>
+	<link rel="icon" href="{%static 'img/Fevicon.png'%}" type="image/png">
+
+  <link rel="stylesheet" href="{%static 'vendors/bootstrap/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/themify-icons/themify-icons.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.theme.default.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/Magnific-Popup/magnific-popup.css'%}">
+
+  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="{%url 'SlavesHome'%}"><h2>Restaurant Billing</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item"><a class="nav-link" href="{%url 'SlavesHome'%}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'GetTokenBranchUser'%}">Token</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'GetReservations'%}">Reservations</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'SlaveDoNewBookingForm'%}">New Booking</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'GenerateBillingForm'%}">Add Bill</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'ViewBranchBills'%}">View Bill</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'logout'%}">Logout</a>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+  </header>
+
+ <div class="container">
+   Branch <strong>{{request.session.branch}}</strong>
+ </div>
+
+  {%block contents%}
+
+  {%endblock%}
+
+  <section class="section-margin mb-lg-100">
+    <div class="container">
+      <div class="section-intro mb-75px">
+        <h4 class="intro-title">Data Synchronization</h4>
+        <h2>Fresh taste and great price</h2>
+      </div>
+
+
+      <div class="owl-carousel owl-theme featured-carousel">
+        <div class="featured-item">
+          <img class="card-img rounded-0" src="{%static 'img/home/featured1.png'%}" alt="">
+          <div class="item-body">
+            <a href="#">
+              <h3>Mountain Mike Pizza</h3>
+            </a>
+            <p>Whales and darkness moving</p>
+            <div class="d-flex justify-content-between">
+
+              <h3 class="price-tag">&#x20B9;350</h3>
+            </div>
+          </div>
+        </div>
+        <div class="featured-item">
+          <img class="card-img rounded-0" src="{%static 'img/home/featured2.png'%}" alt="">
+          <div class="item-body">
+            <a href="#">
+              <h3>Patatas Bravas</h3>
+            </a>
+            <p>Whales and darkness moving</p>
+            <div class="d-flex justify-content-between">
+
+              <h3 class="price-tag">&#x20B9;300</h3>
+            </div>
+          </div>
+        </div>
+        <div class="featured-item">
+          <img class="card-img rounded-0" src="{%static 'img/home/featured3.png'%}" alt="">
+          <div class="item-body">
+            <a href="#">
+              <h3>Pulled Sandwich</h3>
+            </a>
+            <p>Whales and darkness moving</p>
+            <div class="d-flex justify-content-between">
+              <h3 class="price-tag">&#x20B9;200</h3>
+            </div>
+          </div>
+        </div>
+        <div class="featured-item">
+          <img class="card-img rounded-0" src="{%static 'img/home/featured1.png'%}" alt="">
+          <div class="item-body">
+            <a href="#">
+              <h3>Mountain Mike Pizza</h3>
+            </a>
+            <p>Whales and darkness moving</p>
+            <div class="d-flex justify-content-between">
+              <h3 class="price-tag">&#x20B9;350</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer-area section-gap">
+		<div class="container">
+
+			<div class="footer-bottom row align-items-center text-center text-lg-left">
+				<p class="footer-text m-0 col-lg-8 col-md-12">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Alex Corporations</a>
+</p>
+
+			</div>
+		</div>
+	</footer>
+  <!-- ================ End footer Area ================= -->
+
+
+
+
+  <script src="{%static 'vendors/jquery/jquery-3.2.1.min.js'%}"></script>
+  <script src="{%static 'vendors/bootstrap/bootstrap.bundle.min.js'%}"></script>
+  <script src="{%static 'vendors/owl-carousel/owl.carousel.min.js'%}"></script>
+  <script src="{%static 'vendors/nice-select/jquery.nice-select.min.js'%}"></script>
+  <script src="{%static 'vendors/Magnific-Popup/jquery.magnific-popup.min.js'%}"></script>
+  <script src="{%static 'js/jquery.ajaxchimp.min.js'%}"></script>
+  <script src="{%static 'js/mail-script.js'%}"></script>
+  <script src="{%static 'js/main.js'%}"></script>
+</body>
+</html>

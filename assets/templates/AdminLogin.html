@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contents%}
+<section class="hero-banner">
+    <div class="hero-wrapper">
+      <div class="hero-left">
+        <h1 class="hero-title">Admin Login </h1>
+        <div class="d-sm-flex flex-wrap">
+          <p>
+             <form class="search-form" action="{%url 'AdminLoginCheck'%}" method="post">
+            {%csrf_token%}
+              <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-user"></i></span>
+                  <input type="text" name="loginid" class="form-control" placeholder="Enter Login Name">
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                   <span class="input-group-text"><i class="ti-layout-column3"></i></span>
+                  <input type="password" name="pswd" class="form-control" placeholder="Enter Password">
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+              <div class="d-sm-flex flex-wrap">
+                <button class="button button-hero button-shadow" type="submit">Login</button>
+              </div>
+            </form>
+
+           <div class="form-group">
+                <div class="input-group">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+
+          </p>
+
+        </div>
+
+       <!-- <div class="d-sm-flex flex-wrap">
+          <a class="button button-hero button-shadow" href="#">Book Now</a>
+          <a class="hero-banner__video" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Watch Video</a>
+        </div>-->
+
+      </div>
+      <div class="hero-right">
+        <div class="owl-carousel owl-theme hero-carousel">
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{%static 'img/banner/hero-banner1.png'%}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{%static 'img/banner/hero-banner2.png'%}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{%static 'img/home/food1.png'%}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{%static 'img/banner/hero-banner2.png'%}" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+{%endblock%}

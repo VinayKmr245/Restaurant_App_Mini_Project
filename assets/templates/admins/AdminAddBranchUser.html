@@ -1,0 +1,92 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+{%block contents%}
+<section class="about section-margin pb-xl-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 mb-5 mb-md-0 pb-5 pb-md-0">
+          <div class="img-styleBox">
+            <div class="styleBox-border">
+              <img class="styleBox-img1 img-fluid" src="{%static 'img/home/about-img1.png'%}" alt="">
+            </div>
+            <img class="styleBox-img2 img-fluid" src="{%static 'img/home/about-img2.png'%}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-5 pl-xl-0 offset-xl-1 col-xl-5">
+          <div class="section-intro mb-lg-4">
+            <h4 class="intro-title">Add Branch User</h4>
+
+          </div>
+          <p>
+             <form action="{%url 'AdminAddingBranchUserAction'%}" method="POST"  style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr><td></td>
+                            <td>User Name</td>
+                            <td>{{form.name}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Login ID</td>
+                            <td>{{form.loginid}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Password</td>
+                            <td>{{form.password}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Mobile</td>
+                            <td>{{form.mobile}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>email</td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Locality</td>
+                            <td>{{form.locality}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Address</td>
+                            <td>{{form.address}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>City</td>
+                            <td>{{form.city}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>State</td>
+                            <td>{{form.state}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Branch</td>
+                            <td>{{form.branch}}</td>
+                        </tr>
+ <tr><td></td>
+                            <td></td>
+     <td><button type="submit" value="Register" class="button button-shadow mt-2 mt-lg-4">Add User</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group mt-3">
+                                <span  >&nbsp;</span>
+                            </div>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='RED'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+          </p>
+          <!--<a class="button button-shadow mt-2 mt-lg-4" href="#">Learn More</a>-->
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

@@ -1,0 +1,45 @@
+{%extends 'slaves/slavesbass.html'%}
+
+{%block contents%}
+ <div class="container">
+     Statu Code : <span>{{code}}</span>
+     <strong>{{msg}}</strong>
+
+    {% if data %}
+    <br>
+<br>
+    <table align="center" border="2">
+    <tr>
+        <th>S.NO</th>
+        <th>Customer Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>No of Chairs Booked</th>
+        <th>Coming From</th>
+        <th>Reservation Date</th>
+        <th>Booking Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+{% for x in data %}
+
+<tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.custname }}</td>
+    <td>{{ x.mobile }}</td>
+    <td>{{ x.email }}</td>
+    <td>{{ x.noofChairs }}</td>
+    <td>{{ x.branch }}</td>
+    <td>{{ x.reservDate}}</td>
+    <td>{{x.cdate}}</td>
+    <td><a href="{% url 'ReservationEditUpdate' %}?id={{ x.id }}">Edit</a></td>
+    <td><a href="{% url 'DeleteReservation' %}?id={{ x.id }}">Delete</a></td>
+    </tr>
+{% endfor %}
+    </table>
+{% endif %}
+
+ </div>
+
+{%endblock%}
